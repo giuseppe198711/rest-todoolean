@@ -1,13 +1,13 @@
 $(document).ready (function() {
 
-// ready
+// read
 
   $.ajax(
     {
       "url": "http://157.230.17.132:3018/todos",
       "method": "GET",
-      "succes": function(data){
-        console.log(data);
+      "succes": function(data) {
+        render(data);
 
       },
 
@@ -19,13 +19,17 @@ $(document).ready (function() {
 
 });
 
-function render() {
+function render(data) {
   var source = $("#elm-template").html();
   var template = Handlebars.compile(source);
 
+  var context = {
+    "data": data
+  }
 
 
-  var html = template(data);
+
+  var html = template(context);
 
   $("#list").append(html);
 
