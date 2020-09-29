@@ -11,16 +11,15 @@
 </head>
 <body>
     <h1>Todo list</h1>
-    <ul id="list">
-
-    </ul>
-
+    <ul id="list"></ul>
+    <input id="input-add-element" type="text" placeholder="inserisci un nuovo elemento">
+    <button class="add-todo">Aggiungi</button>
 
 
     <script id="elm-template" type="text/x-handlebars-template">
-      {{#each data}}
-       <li>{{this.text}} <span class="delete">X</span></li>
-      {{/each}
+
+       <li id="{{id}}">{{text}} <span class="delete">X</span></li>
+
     </script>
   <script src="script.js" charset="utf-8"></script>
 </body>
